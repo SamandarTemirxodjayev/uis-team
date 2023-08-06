@@ -2,9 +2,13 @@ const express = require('express');
 const https = require('https');
 const fs = require('fs');
 const router = require('./routes/router');
+const mongoose = require("mongoose");
+const bodyParser = require('body-parser');
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use('/', router);
@@ -15,13 +19,28 @@ const options = {
   ca: fs.readFileSync('/etc/letsencrypt/live/uis-team.com/chain.pem')
 };
 
-const server = https.createServer(options, app);
+mongoose.set("strictQuery", false);
+mongoose
+  .connect(
+    "mongodb://127.0.0.1:27017/uis?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.1",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => {
+    console.log("Server is connecting on MongoDB");
+    const server = https.createServer(options, app);
 
-const port = 443; 
+    const port = 443; 
 
-server.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+    server.listen(port, () => {
+      console.log(`Server running on port ${port}`);
+    });
+  })
+  .catch((error) => {
+    console.error("Error connecting to the database:", error);
+  });
 app.use((req, res, next) => {
   res.status(404).render('404');
 });

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>UIS Team</title>
+  <title>UIS Team - Bog'lanish</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="UIS Team" name="keywords">
-  <meta content="UIS Team" name="description">
+  <meta content="UIS Team - Bog'lanish" name="keywords">
+  <meta content="UIS Team - Bog'lanish" name="description">
   <link href="img/favicon.ico" rel="icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +20,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
   <div class="container-xxl bg-white p-0">
     <div id="spinner"
@@ -45,16 +47,18 @@
             <a href="/contact" class="nav-item nav-link">Bog'lanish</a>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
       <div class="container-xxl py-5 bg-primary hero-header">
         <div class="container my-5 py-5 px-lg-5">
           <div class="row g-5 py-5">
             <div class="col-12 text-center">
-              <h1 class="text-white animated slideInDown">Sahifa Topilmadi</h1>
+              <h1 class="text-white animated slideInDown">Bog'lanish</h1>
               <hr class="bg-white mx-auto mt-0" style="width: 90px;">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center">
                   <li class="breadcrumb-item"><a class="text-white" href="/">Asosiy Sahifa</a></li>
+                  <li class="breadcrumb-item text-white active" aria-current="page">Bog'lanish</li>
                 </ol>
               </nav>
             </div>
@@ -62,16 +66,48 @@
         </div>
       </div>
     </div>
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-      <div class="container px-lg-5 text-center">
+    <div class="container-xxl py-5">
+      <div class="container py-5 px-lg-5">
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+          <p class="section-title text-secondary justify-content-center"><span></span>Biz bilan bog'lanish<span></span></p>
+          <h1 class="text-center mb-5">Har Qanday Ma'lumot Uchun Bog'lanish</h1>
+        </div>
         <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
-            <h1 class="display-1">404</h1>
-            <h1 class="mb-4">Sahifa Topilmadi</h1>
-            <p class="mb-4">Kechirasiz, siz qidirgan sahifa bizning veb-saytimizda mavjud emas! Ehtimol,
-              Bosh sahifa yoki qidiruvdan foydalanishga harakat qilyapsizmi?</p>
-            <a class="btn btn-primary rounded-pill py-3 px-5" href="/">Asosiy Sahifa</a>
+          <div class="col-lg-7">
+            <div class="wow fadeInUp" data-wow-delay="0.3s">
+              <form action="/contact" method="post">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input name="name" type="text" class="form-control" id="name" placeholder="Ismingiz" required>
+                      <label for="name">Ismingiz</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input name="phone" type="number" class="form-control" id="phone" placeholder="Telefon raqamingiz" required>
+                      <label for="phone">Telefon raqamingiz</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <input name="subject" type="text" class="form-control" id="subject" placeholder="Mazvu" required>
+                      <label for="subject">Mazvu</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <textarea name="text" class="form-control" placeholder="Xabaringiz" id="message"
+                        style="height: 150px" required></textarea>
+                      <label for="message">Xabaringiz</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary w-100 py-3" type="submit">Xabar Yuborish</button>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -128,7 +164,7 @@
             <div class="position-relative w-100 mt-3">
               <form action="/" method="post">
                 <input name="email" class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="qwerty@gmail.com" style="height: 48px;">
-              <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
               </form>
             </div>
           </div>
@@ -164,4 +200,5 @@
   <script src="lib/lightbox/js/lightbox.min.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>

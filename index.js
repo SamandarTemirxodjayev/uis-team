@@ -30,13 +30,9 @@ mongoose
   )
   .then(() => {
     console.log("Server is connecting on MongoDB");
-    const server = https.createServer(options, app);
-
-    const port = 443; 
-
-    server.listen(port, () => {
-      console.log(`Server running on port ${port}`);
-    });
+    app.listen(3000, () => {
+      console.log("Server is running on port 3000");
+    })
   })
   .catch((error) => {
     console.error("Error connecting to the database:", error);
